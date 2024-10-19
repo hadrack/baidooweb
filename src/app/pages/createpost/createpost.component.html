@@ -1,0 +1,44 @@
+<p>createpost works!</p>
+<mat-card-content>
+    <div>
+        <form [formGroup]="postForm">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>img</mat-label>
+                <input matInput formControlName="img" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>content</mat-label>
+                <textarea matInput formControlName="content" ></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Postedby</mat-label>
+                <input matInput formControlName="postedby" type="text">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Tags</mat-label>
+                <mat-chip-grid #chipGrid aria-label="Enter tags">
+                    <mat-chip-row *ngFor="let tag of tags; let i = index" (removed)="remove(tag)">
+                        {{ tag }}
+                        <button matChipRemove>
+                            <mat-icon class="mat-18">cancel</mat-icon>
+                        </button>
+                    </mat-chip-row>
+
+                    <input placeholder="New tag........" [matChipInputFor]="chipGrid" (matChipInputTokenEnd)="add($event)"/>
+                </mat-chip-grid>
+            </mat-form-field>
+
+            <button type="submit"></button>
+
+            <button mat-raised-button color="primary" style="float:right;" [disabled]="!postForm.valid"(click)="createPost()">Create New Post</button>
+        </form>
+    </div>
+</mat-card-content>

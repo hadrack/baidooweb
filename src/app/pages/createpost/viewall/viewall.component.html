@@ -1,0 +1,32 @@
+<p>viewall works!</p>
+
+<div class="card-container" *ngFor="let item of allPost">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{item.name}}</mat-card-title>
+      <mat-card-subtitle>Posted by {{item.postedby}} | Posted on: {{item.date | date:'medium'}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-grid-list cols="5">
+      <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <img mat-card-image src="{{item.image}}" alt="Image 1">
+      </mat-grid-tile>
+    </mat-grid-list>
+    <mat-grid-tile [colspan]="3" [rowspan]="1">
+      <mat-card-content>
+        {{item.content.length > 600 ? item.content.substr(0, 600) + "....." : item.content}}
+      </mat-card-content>
+    </mat-grid-tile>
+    </mat-card>
+
+  <hr>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" style="margin-left: 5px;">{{item.likeCount}}</button>
+    <button mat-raised-button color="primary" style="margin-left: 5px;">
+      {{item.viewCount}}
+      <mat-icon>remove_red_eye</mat-icon>
+      <button mat-raised-button color="primary" style="margin-left: 5px;" routerLink="/viewpost/{{item.id}}">viewpost</button>   </button>
+  </mat-card-actions>
+</div>

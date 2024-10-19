@@ -1,0 +1,17 @@
+.center card{
+   padding: 30px;
+    margin-top: 10px;
+    margin: auto;
+    max-width: 600;
+}
+
+mat-form-field{
+    width: 100%;
+}
+p{
+ font-size: 20px;
+ color: coral;
+ 
+position: relative;
+
+}

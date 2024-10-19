@@ -1,0 +1,29 @@
+.card-container{
+    margin: 10px;
+    max-width: 60%;
+    padding-bottom: 30px;
+    background-color: aqua;
+}
+
+mat-card{
+    padding: 10px;
+}
+
+.example-header-image{
+    background-image: url('https://material.angular.io/asserts/img/examples/shibai.jpg');
+    background-size: cover;
+}
+
+
+mat-card-footer{
+    margin-left: 20px;
+}
+
+.post-img{
+    width: 100px;
+    height: 200px;
+    margin-top: 16px;
+    object-fit: cover;
+}
+
+
